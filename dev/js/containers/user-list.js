@@ -4,19 +4,24 @@ import {connect} from 'react-redux';
 
 class UserList extends Component {
   
+  createListItems() {
+    return this.props.users.map((user) => {
+      return (
+        <li>{user.first}</li>
+      );
+    });
+  }
+  
   render() {
     return (
       <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
+        {this.createListItems()}
       </ul>
     );
   }
   
 }
 
-// Takes a piece of the app store and passes it in to your component as a property
 function mapStateToProps(state) {
   
   return {
