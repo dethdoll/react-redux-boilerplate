@@ -4,10 +4,11 @@ import {connect} from 'react-redux';
 
 class UserList extends Component {
   
+
   createListItems() {
     return this.props.users.map((user) => {
       return (
-        <li>{user.first}</li>
+        <li key={user.id}>{user.first} {user.last}</li>
       );
     });
   }
